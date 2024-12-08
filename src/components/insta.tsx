@@ -1,7 +1,7 @@
 function Insta() {
   return (
     <>
-    <div className="bg-[url('/images/top8.png')] bg-cover bg-center h-auto md:h-[400px] ">
+    <div className="bg-[url('/images/top8.png')] bg-cover bg-center h-auto md:h-[400px] overflow-hidden ">
       <div className="flex justify-center items-center h-screen ">
         <div className="text-center h-96 md:h-[350px]">
           <h4 className="text-5xl text-black font-bold ">Our Instagram</h4>

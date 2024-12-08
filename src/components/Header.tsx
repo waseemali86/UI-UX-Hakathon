@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Header() {
   return (
-    <header className="bg-white border-b border-gray-300 px-4 md:px-8 py-2">
+    <header className="bg-white border-b border-gray-300 px-4 md:px-8 py-2 overflow-hidden">
       <div className="container mx-auto flex items-center justify-between">
         {/* Left Side - Logo */}
         <div className="flex items-center">

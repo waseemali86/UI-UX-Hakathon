@@ -30,7 +30,7 @@ export function NavBar() {
   }
 
   return (
-    <nav className="bg-[#fBEaa2] px-6 py-4">
+    <nav className="bg-[#fBEaa2] px-6 py-4 overflow-hidden">
       <div className="flex items-center justify-between">
         {/* Center Section (Navigation Links) */}
         <div className="hidden md:flex space-x-14 ml-20 items-center justify-center w-full">

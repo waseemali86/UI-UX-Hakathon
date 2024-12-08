@@ -3,7 +3,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className="bg-[#FBEBB5] min-h-screen flex items-center px-4 md:px-16">
+    <section className="bg-[#FBEBB5] min-h-screen flex items-center px-4 md:px-16 overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         {/* Left Content */}
         <div className="flex flex-col justify-center space-y-4">

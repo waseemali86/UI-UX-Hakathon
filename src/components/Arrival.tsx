@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import React from 'react';
 
-const Top4: React.FC = () => {
+const Top4 = () => {
   return (
     <>
-    <div className='flex flex-col-reverse md:flex-row md:justify-evenly bg-[#FFF9E5] h-auto md:h-[639px] py-10'>
+    <div className='flex flex-col-reverse md:flex-row md:justify-evenly bg-[#FFF9E5] h-auto md:h-[639px] py-10 overflow-hidden'>
         <div>
             <Image
              src="/images/top7.png"
