@@ -70,8 +70,8 @@ function Blogs() {
                   href="#"
                   className="inline-block text-black text-lg font-medium underline hover:no-underline hover:text-gray-800 transition"
                 >
-                  Read More
-                </a>
+                  Read More  
+                </a> 
                 <p>5 min 12th Oct 2022</p>
               </div>
               {/* Blog Card */}
