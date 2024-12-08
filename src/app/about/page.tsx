@@ -1,11 +1,9 @@
-function About() {
-    return (
-      <>
-      <div className="bg-[url('/images/shop.png')] bg-cover bg-center h-auto md:h-[400px] overflow-hidden ">
-        </div>
-      </>
-    );
-  }
-  
-  export default About;
-  
+import React from 'react'
+
+const About = () => {
+  return (
+    <div className='about'>About</div>
+  )
+}
+
+export default About
