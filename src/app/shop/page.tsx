@@ -19,7 +19,7 @@ const Shop = () => {
   <div className="container mx-auto px-4 text-center">
 
     {/* Product Grid */}
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
       
       {/* Column 1 */}
       <div className="text-center">
