@@ -94,9 +94,10 @@ const Cart = () => {
               </div>
 
               {/* Checkout Button */}
-              <button className="w-full py-2 bg-transparent border border-black rounded-md text-black text-lg hover:bg-black hover:text-white transition mt-4">
+              <Link href="/checkout"><button className="w-full py-2 bg-transparent border border-black rounded-md text-black text-lg hover:bg-black hover:text-white transition mt-4">
                 Checkout
               </button>
+              </Link>
             </div>
           </div>
         </div>
