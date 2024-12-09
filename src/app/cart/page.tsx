@@ -6,13 +6,12 @@ const Cart = () => {
   return (
     <div>
       {/* First Section with Tailwind Background */}
-      <section className="relative h-[60vh] bg-cover bg-center bg-shop-bg">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
+      <section className="bg-[url('/images/bg.jpg')] md:h-[400px] overflow-hidden relative h-[60vh] bg-cover bg-center bg-shop-bg">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-black text-center">
           {/* Small Image in Center */}
           <div className="mb-4">
             <Image
-              src="/image/shop.png" 
+              src="/images/shop0.png" 
               alt="Shop Icon"
               width={100}   
               height={100}  
@@ -64,7 +63,7 @@ const Cart = () => {
                 {/* Second Row */}
                 <div className="flex justify-center">
                   <Image
-                    src="/image/asgaardsofa.jpeg"
+                    src="/images/top4.png"
                     alt="Asgaard Sofa"
                     width={150}
                     height={150}

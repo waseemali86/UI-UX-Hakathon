@@ -7,12 +7,25 @@ const Shop = () => {
   return (
     <div>
       {/* First Section with Tailwind Background */}
-<section
-  className="bg-[url('/images/shop.png')] md:h-[400px] overflow-hidden  relative h-[60vh] bg-cover bg-center bg-shop-bg">
-  <div className="absolute inset-0 bg-black opacity-50"></div>
-  <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center"></div>
-    {/* Small Image in Center */}
-</section>
+      {/* First Section with Tailwind Background */}
+      <section className="bg-[url('/images/bg.jpg')] md:h-[400px] overflow-hidden relative h-[60vh] bg-cover bg-center bg-shop-bg">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-black text-center">
+          {/* Small Image in Center */}
+          <div className="mb-4">
+            <Image
+              src="/images/shop0.png" 
+              alt="Shop Icon"
+              width={100}   
+              height={100}  
+              className="object-cover rounded-full"
+            />
+          </div>
+          <h1 className="text-5xl font-bold">Shop</h1>
+          <p className="text-xl mt-4">
+            <Link href="/">Home</Link> &gt; Shop
+          </p>
+        </div>
+      </section>
 
      {/* Second Section: Product Grid */}
 <section className="bg-white text-black py-10">

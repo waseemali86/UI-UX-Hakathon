@@ -1,23 +1,32 @@
-// function About() {
-//     return (
-//       <>
-//       <div className="bg-[url('/images/contact.png')] bg-cover bg-center h-auto md:h-[400px] overflow-hidden ">
-//         </div>
-//       </>
-//     );
-//   }
-  
-//   export default About;
-  
 
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const ContactSection = () => {
-  // Form Submission Handler
  
 
   return (
     <>
+    {/* First Section with Tailwind Background */}
+    <section className="bg-[url('/images/bg.jpg')] md:h-[400px] overflow-hidden relative h-[60vh] bg-cover bg-center bg-shop-bg">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-black text-center">
+          {/* Small Image in Center */}
+          <div className="mb-4">
+            <Image
+              src="/images/shop0.png" 
+              alt="Shop Icon"
+              width={100}   
+              height={100}  
+              className="object-cover rounded-full"
+            />
+          </div>
+          <h1 className="text-5xl font-bold">Contact</h1>
+          <p className="text-xl mt-4">
+            <Link href="/">Home</Link> &gt; Contact
+          </p>
+        </div>
+      </section>
       {/* Contact Section */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">

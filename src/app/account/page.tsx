@@ -1,25 +1,23 @@
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Account = () => {
   return (
     <div>
       {/* First Section with Tailwind Background */}
-      <section className="relative h-[60vh] bg-cover bg-center bg-shop-bg">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
-          {/* Small Image in Center */}
-          <div className="mb-4">
+      <section className="bg-[url('/images/bg.jpg')] h-[400px] overflow-hidden relative bg-cover bg-center">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-black text-center">
+        <div className="mb-4">
             <Image
-              src="/image/shop.png" 
+              src="/images/shop0.png" 
               alt="Shop Icon"
               width={100}   
               height={100}  
               className="object-cover rounded-full"
             />
           </div>
-          <h1 className="text-5xl font-bold">Shop</h1>
+          <h1 className="text-5xl font-bold">Account</h1>
           <p className="text-xl mt-4">
             <Link href="/">Home</Link> &gt; My Account
           </p>

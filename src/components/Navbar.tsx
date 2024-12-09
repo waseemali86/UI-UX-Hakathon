@@ -86,7 +86,7 @@ export function NavIcons() {
   return (
     <>
       <button className="p-2">
-        <User className="h-5 w-5" />
+        <Link href="/account"><User className="h-5 w-5" /></Link>
         <span className="sr-only">Account</span>
       </button>
       <button className="p-2">
@@ -98,7 +98,7 @@ export function NavIcons() {
         <span className="sr-only">Wishlist</span>
       </button>
       <button className="p-2">
-        <ShoppingCart className="h-5 w-5" />
+        <Link href="/cart"><ShoppingCart className="h-5 w-5" /></Link>
         <span className="sr-only">Cart</span>
       </button>
     </>
