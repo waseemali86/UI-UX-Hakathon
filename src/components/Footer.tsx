@@ -49,13 +49,13 @@ const Footer = () => {
           {/* Newsletter Section */}
           <div>
             <h3 className="text-gray-500 text-sm font-medium mb-3">Newsletter</h3>
-            <div className="flex items-center">
+            <div className="flex items-center md:flex-col">
               <input
                 type="email"
                 placeholder="Enter Your Email Address"
                 className="flex-1 px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-1 focus:ring-black"
               />
-              <button className="bg-black text-white px-4 py-2 rounded-r-md hover:bg-gray-800 transition">
+              <button className="bg-black text-white md:items-end px-4 py-2 rounded-r-md hover:bg-gray-800 transition">
                 SUBSCRIBE
               </button>
             </div>

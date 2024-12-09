@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function Blogs() {
   return (
@@ -77,12 +78,12 @@ function Blogs() {
               {/* Blog Card */}
             </div>
             <div className="text-center mt-16">
-          <a
-            href="#"
+          <Link
+            href="/blog"
             className="inline-block text-black text-center font-medium underline hover:no-underline hover:text-gray-800 transition"
           >
             View All Post
-          </a>
+          </Link>
         </div>
           </div>
         </div>

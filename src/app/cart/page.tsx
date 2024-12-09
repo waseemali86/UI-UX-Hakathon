@@ -50,11 +50,12 @@ const Cart = () => {
                   <p>Rs. 250,000.00</p>
                 </div>
                 <div>
-                  {/* <input
+                  <input
+                    title='0'
                     type="number"
                     value="1"
                     className="w-full p-2 border border-gray-300 rounded-md text-center"
-                  /> */}
+                  />
                 </div>
                 <div>
                   <p className="font-semibold">Rs. 250,000.00</p>

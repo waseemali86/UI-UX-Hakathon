@@ -18,9 +18,9 @@ const Checkout = () => {
               className="object-cover rounded-full"
             />
           </div>
-          <h1 className="text-5xl font-bold">Check Out</h1>
+          <h1 className="text-5xl font-bold">CheckOut</h1>
           <p className="text-xl mt-4">
-            <Link href="/">Home</Link> &gt; Check Out
+            <Link href="/">Home</Link> &gt; CheckOut
           </p>
         </div>
       </section>
