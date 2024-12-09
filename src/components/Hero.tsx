@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         {/* Left Content */}
         <div className="flex flex-col justify-center space-y-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-800 leading-snug">
+          <h1 className="text-4xl md:text-6xl text-center md:text-left pt-8 md:pt-0 font-bold text-gray-800 leading-snug">
             Rocket single <br /> seater
           </h1>
           {/* <p className="text-lg text-gray-600">
@@ -15,7 +15,7 @@ const Hero = () => {
           </p> */}
           <a
             href="#shop"
-            className="inline-block text-black font-medium underline hover:no-underline hover:text-gray-800 transition"
+            className="inline-block text-black text-center md:text-left font-medium underline hover:no-underline hover:text-gray-800 transition"
           >
             Shop Now
           </a>

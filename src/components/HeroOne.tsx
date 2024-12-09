@@ -4,7 +4,7 @@ import React from 'react';
 const Top2 = () => {
   return (
     <>
-    <div className='flex flex-col justify-center md:flex-row md:justify-evenly bg-[#faf4f4] md:h-[672px] h-auto py-10 overflow-hidden'>
+    <div className='flex flex-col justify-center md:flex-row bg-[#faf4f4] md:h-[672px] h-auto py-10 overflow-hidden'>
         <div>
             <Image
              src="/images/top6.png"

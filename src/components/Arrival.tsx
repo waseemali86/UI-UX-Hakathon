@@ -4,18 +4,18 @@ import React from 'react';
 const Top4 = () => {
   return (
     <>
-    <div className='flex flex-col-reverse md:flex-row md:justify-evenly bg-[#FFF9E5] h-auto md:h-[639px] py-10 overflow-hidden'>
-        <div>
+    <div className='flex flex-col justify-center items-center md:items-start md:flex-row md:justify-evenly bg-[#FFF9E5] h-auto md:h-[639px] py-10 overflow-hidden'>
+        <div className=''>
             <Image
              src="/images/top7.png"
              alt="Image 1"
              width={250}
              height={250} 
-            className='w-[783px] h-[599px]'
+            className='w-96 md:w-[783px] h-96 md:h-[599px]'
             >
             </Image>
         </div>
-        <div className='text-center pt-64'>
+        <div className='text-center md:pt-64 '>
             <p className='text-black'>
                 New Arrivals
             </p>
