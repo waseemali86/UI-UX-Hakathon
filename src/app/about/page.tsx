@@ -1,59 +1,115 @@
+import Image from "next/image";
 
-'use client'
-
-// import Footer from "@/app/components/Footer";
-// import Header from "@/app/components/Header";
-
-export default function About() {
+export default function AboutPage() {
   return (
-    <> 
-    <div className="flex flex-col items-center bg-orange-400 px-6 py-12 lg:px-16">
-      <h1 className="text-4xl font-bold text-gray-800 mb-6 text-center">About Us</h1>
-      <p className="text-lg text-gray-600 mb-8 text-center max-w-3xl">
-        Welcome to <span>Ecomerce</span>! We are passionate about bringing you the best products from around the world. Our mission is to deliver high-quality, affordable, and unique items that fit your lifestyle and make shopping an enjoyable experience.
-      </p>
-
-      <section className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-5xl">
-        <div className="bg-white hover:bg-orange-500 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <h2 className="text-2xl font-semibold text-[#1D1743] mb-4">Our Story</h2>
-          <p className="text-gray-600">
-            Founded in 2022, Ecommerce started as a small family business and has grown into a well-loved e-commerce platform. We believe in building a community of like-minded shoppers who value quality, affordability, and style.
-          </p>
-        </div>
-        <div className="bg-white hover:bg-orange-500 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <h2 className="text-2xl font-semibold text-[#1D1743] mb-4">Our Mission</h2>
-          <p className="text-gray-600">
-            Our mission is to connect people with products they love, while maintaining exceptional customer service and creating an inclusive, enjoyable shopping experience.
-          </p>
-        </div>
-        <div className="bg-white hover:bg-orange-500 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <h2 className="text-2xl font-semibold text-[#1D1743] mb-4">Quality & Value</h2>
-          <p className="text-gray-600">
-            We carefully select our products to ensure quality and value. Whether you are looking for fashion, home decor, or tech accessories, we guarantee satisfaction with every purchase.
-          </p>
+    <div className="bg-gray-50 text-gray-800">
+      {/* Hero Section */}
+      <section className="relative bg-[url('/path-to-your-background.jpg')] bg-cover bg-center h-[70vh] flex items-center justify-center text-center text-white">
+        <div className="bg-black bg-opacity-50 p-8 rounded-lg">
+          <h1 className="text-4xl font-bold mb-4">Crafting Comfort and Style for Your Home</h1>
+          <p className="text-lg mb-6">Discover our passion for creating quality furniture that fits your lifestyle.</p>
+          <button className="px-6 py-3 bg-teal-500 hover:bg-teal-600 rounded text-white font-semibold">
+            Learn More About Us
+          </button>
         </div>
       </section>
 
-      <section className="mt-12 text-center max-w-2xl">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">What Makes Us Different?</h2>
-        <ul className="text-lg text-gray-600 space-y-4 list-disc list-inside">
-          <li>Curated collections that align with current trends.</li>
-          <li>Personalized recommendations to enhance your shopping experience.</li>
-          <li>Responsive and friendly customer support available 24/7.</li>
-          <li>Fast and reliable shipping with hassle-free returns.</li>
-        </ul>
+      {/* Story Section */}
+      <section className="container mx-auto py-16 px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <Image src="/images/blog1.png" alt="Our Story" width={100} height={100} className="rounded-lg shadow-md h-96 w-96"></Image>
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Our Journey</h2>
+            <p className="text-lg text-gray-600">
+              Founded in 2020, we are committed to creating timeless furniture pieces that combine
+              elegance and comfort. Sustainability and quality craftsmanship are at the heart of our designs.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <div className="mt-16">
-        <h3 className="text-2xl font-bold text-[#1D1743] mb-4">Join Our Community</h3>
-        <p className="text-gray-600 mb-6">
-          Follow us on social media and subscribe to our newsletter to stay updated on new arrivals, promotions, and more!
-        </p>
-        <button className="bg-[#1D1743] text-white py-2 px-6 rounded-lg hover:bg-[#0A0830] transition duration-300">
-          Subscribe Now
+      {/* Why Choose Us Section */}
+      <section className="bg-white py-16">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-8">Why Our Furniture?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              {
+                title: 'Quality Craftsmanship',
+                description: 'Handcrafted by experts.',
+                icon: '🛠️',
+              },
+              {
+                title: 'Sustainable Materials',
+                description: 'Eco-friendly and durable.',
+                icon: '🌱',
+              },
+              {
+                title: 'Timeless Design',
+                description: 'Modern aesthetics for every home.',
+                icon: '🛋️',
+              },
+              {
+                title: 'Customer Support',
+                description: '24/7 dedicated support.',
+                icon: '📞',
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="text-center bg-gray-100 p-6 rounded-lg shadow-md"
+              >
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-8">What Our Customers Say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[1, 2, 3].map((testimonial) => (
+              <div
+                key={testimonial}
+                className="bg-white p-6 shadow-lg rounded-lg"
+              >
+                <p className="text-gray-600 italic">
+                  Absolutely love the quality and design! It fits perfectly in
+                  my living room.
+                </p>
+                <div className="mt-4 flex items-center justify-center">
+                  <Image
+                    src="/images/blog2.png"
+                    alt="Customer"
+                    width={100}
+                    height={100}
+                    className="w-12 h-12 rounded-full"
+                  >
+                  </Image>
+                  <div className="ml-4 text-left">
+                    <h4 className="font-bold">Customer Name</h4>
+                    <p className="text-gray-500 text-sm">Verified Buyer</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="bg-teal-500 py-16 text-white text-center">
+        <h2 className="text-3xl font-bold mb-4">Ready to transform your home?</h2>
+        <button className="px-8 py-3 bg-teal-700 hover:bg-teal-800 rounded font-semibold">
+          Shop Now
         </button>
-      </div>
+      </section>
     </div>
-    </>
   );
 }
+
