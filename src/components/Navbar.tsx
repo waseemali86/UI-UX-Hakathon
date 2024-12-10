@@ -32,15 +32,14 @@ export function NavBar() {
   return (
     <nav className="bg-[#FBEBB5] px-6 py-4 overflow-hidden">
       <div className="flex items-center justify-between">
-        {/* Center Section (Navigation Links) */}
+        {/* Navigation Links */}
         <div className="hidden md:flex space-x-14 ml-20 items-center justify-center w-full">
           <NavLinks />
         </div>
 
-        {/* Right Section (Icons) */}
+        {/*  Icons */}
         <div className="flex mr-3 items-center space-x-5">
           <NavIcons />
-          {/* Hamburger Menu - Visible only on mobile */}
           <button className="md:hidden p-2" onClick={toggleMenu}>
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>

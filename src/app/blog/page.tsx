@@ -121,7 +121,7 @@ function Blog() {
               {/* Recent Post 1 */}
               <div className="flex items-center space-x-4">
                 <Image
-                  src="/images/b1.png"
+                  src="/images/rp1.png"
                   alt="Recent Post 1"
                   width={100}
                   height={100}
@@ -138,7 +138,7 @@ function Blog() {
               {/* Recent Post 2 */}
               <div className="flex items-center space-x-4">
                 <Image
-                  src="/images/b2.png"
+                  src="/images/rp2.png"
                   alt="Recent Post 2"
                   width={100}
                   height={100}
@@ -155,7 +155,7 @@ function Blog() {
               {/* Recent Post 3 */}
               <div className="flex items-center space-x-4">
                 <Image
-                  src="/images/b3.png"
+                  src="/images/rp3.png"
                   alt="Recent Post 3"
                   width={100}
                   height={100}
@@ -172,7 +172,7 @@ function Blog() {
               {/* Recent Post 4 */}
               <div className="flex items-center space-x-4">
                 <Image
-                  src="/images/b4.png"
+                  src="/images/rp4.png"
                   alt="Recent Post 4"
                   width={100}
                   height={100}
@@ -189,7 +189,7 @@ function Blog() {
               {/* Recent Post 5 */}
               <div className="flex items-center space-x-4">
                 <Image
-                  src="/images/b5.png"
+                  src="/images/rp5.png"
                   alt="Recent Post 5"
                   width={100}
                   height={100}

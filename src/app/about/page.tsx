@@ -4,8 +4,8 @@ export default function AboutPage() {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
-      <section className="relative bg-[url('/path-to-your-background.jpg')] bg-cover bg-center h-[70vh] flex items-center justify-center text-center text-white">
-        <div className="bg-black bg-opacity-50 p-8 rounded-lg">
+      <section className="relative bg-[url('/images/bg.jpg')] bg-cover bg-center h-[70vh] flex items-center justify-center text-center text-black">
+        <div className="">
           <h1 className="text-4xl font-bold mb-4">Crafting Comfort and Style for Your Home</h1>
           <p className="text-lg mb-6">Discover our passion for creating quality furniture that fits your lifestyle.</p>
           <button className="px-6 py-3 bg-teal-500 hover:bg-teal-600 rounded text-white font-semibold">
@@ -16,8 +16,8 @@ export default function AboutPage() {
 
       {/* Story Section */}
       <section className="container mx-auto py-16 px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <Image src="/images/blog1.png" alt="Our Story" width={100} height={100} className="rounded-lg shadow-md h-96 w-96"></Image>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center ">
+          <Image src="/images/blog4.png" alt="Our Story" width={100} height={100} className="rounded-lg shadow-md w-96 h-96"></Image>
           <div>
             <h2 className="text-3xl font-bold mb-4">Our Journey</h2>
             <p className="text-lg text-gray-600">
