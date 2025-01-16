@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const TopPicks = () => {
   return (
-    <section className="py-11 bg-white overflow-hidden">
+    <section className="max-w-[1450px] mx-auto py-11 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section Heading */}
         <div className="text-center mb-12">

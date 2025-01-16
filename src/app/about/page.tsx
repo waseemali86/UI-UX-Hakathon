@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div className="bg-gray-50 text-gray-800">
+    <div className="max-w-[1450px] mx-auto bg-gray-50 text-gray-800 overflow-hidden">
       {/* Hero Section */}
-      <section className="relative bg-[url('/images/bg.jpg')] bg-cover bg-center h-[70vh] flex items-center justify-center text-center text-black">
+      <section className="relative bg-[url('/images/bg.jpg')] bg-cover bg-center h-96 flex items-center justify-center text-center text-black">
         <div className="">
           <h1 className="text-4xl font-bold mb-4">Crafting Comfort and Style for Your Home</h1>
           <p className="text-lg mb-6">Discover our passion for creating quality furniture that fits your lifestyle.</p>
@@ -92,7 +93,7 @@ export default function AboutPage() {
                   >
                   </Image>
                   <div className="ml-4 text-left">
-                    <h4 className="font-bold">Customer Name</h4>
+                    <h4 className="font-bold">Ahmed</h4>
                     <p className="text-gray-500 text-sm">Verified Buyer</p>
                   </div>
                 </div>
@@ -105,9 +106,9 @@ export default function AboutPage() {
       {/* Call to Action Section */}
       <section className="bg-teal-500 py-16 text-white text-center">
         <h2 className="text-3xl font-bold mb-4">Ready to transform your home?</h2>
-        <button className="px-8 py-3 bg-teal-700 hover:bg-teal-800 rounded font-semibold">
+        <Link href="/shop"><button className="px-8 py-3 bg-teal-700 hover:bg-teal-800 rounded font-semibold">
           Shop Now
-        </button>
+        </button></Link>
       </section>
     </div>
   );

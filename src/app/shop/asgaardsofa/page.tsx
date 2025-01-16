@@ -5,9 +5,9 @@ import Link from 'next/link';
 
 const AsgaardSofaPage = () => {
   return (
-    <div className="container mx-auto px-4">
+    <div className="max-w-[1450px] mx-auto overflow-hidden">
       {/* Breadcrumb Bar */}
-      <div className="text-gray-500 text-sm my-4">
+      <div className="text-gray-500 text-sm m-4">
         <Link href="/" className="hover:text-black">Home</Link> &gt; 
         <Link href="/shop" className="hover:text-black">Shop</Link> &gt; 
         <span className="font-semibold">Asgaard Sofa</span>
@@ -18,28 +18,28 @@ const AsgaardSofaPage = () => {
         {/* First Column: Four Images */}
         <div className="flex flex-col gap-4">
           <Image
-            src="/image/s2p1c1r1.png"
+            src="/images/shop14.png"
             alt="Product 1"
             width={150}
             height={150}
             className="object-contain mx-auto"
           />
           <Image
-            src="/image/s2p1c1r2.png"
+            src="/images/shop14.png"
             alt="Product 2"
             width={150}
             height={150}
             className="object-contain mx-auto"
           />
           <Image
-            src="/image/s2p1c1r3.png"
+            src="/images/shop14.png"
             alt="Product 3"
             width={150}
             height={150}
             className="object-contain mx-auto"
           />
           <Image
-            src="/image/asgaardsofa.jpeg"
+            src="/images/shop14.png"
             alt="Product 4"
             width={150}
             height={150}
@@ -50,7 +50,7 @@ const AsgaardSofaPage = () => {
         {/* Second Column: Large Image */}
         <div>
           <Image
-            src="/image/asgaardsofa.jpeg"
+            src="/images/shop14.png"
             alt="Asgaard Sofa Large Image"
             width={1000}
             height={1000}
@@ -91,13 +91,13 @@ const AsgaardSofaPage = () => {
             <button className="px-4 py-2 border rounded">XL</button>
           </div>
 
-          {/* Color Options */}
-          {/* <div className="flex items-center gap-2">
+          Color Options 
+          <div className="flex items-center gap-2">
             <span className="font-bold">Color:</span>
-            <button className="w-8 h-8 rounded-full border bg-blue-500"></button>
-            <button className="w-8 h-8 rounded-full border bg-black"></button>
-            <button className="w-8 h-8 rounded-full border bg-beige-500"></button>
-          </div> */}
+            <button className="w-8 h-8 rounded-full border bg-blue-500">B</button>
+            <button className="w-8 h-8 rounded-full border bg-black">B</button>
+            <button className="w-8 h-8 rounded-full border bg-red-500">R</button>
+          </div>
 
           {/* Quantity and Add to Cart */}
           <div className="flex gap-4">
@@ -107,7 +107,7 @@ const AsgaardSofaPage = () => {
               defaultValue="1"
               className="w-16 border rounded text-center"
             /> */}
-            <button className="bg-black text-white px-4 py-2 rounded">Add to Cart</button>
+           <Link href="/shop/asgaardsofa/cartside"> <button className="bg-black text-white px-4 py-2 rounded">Add to Cart</button></Link>
           </div>
 
           {/* Additional Text in Two Columns */}
@@ -144,7 +144,7 @@ const AsgaardSofaPage = () => {
     <div className="grid grid-cols-2 gap-4 mb-8">
       <div>
         <Image
-          src="/image/s2p1s3c3.png" 
+          src="/images/shop14.png" 
           alt="Second Row Image 1"
           width={600}
           height={400}
@@ -153,7 +153,7 @@ const AsgaardSofaPage = () => {
       </div>
       <div>
         <Image
-          src="/image/s2p1s3c2.png" 
+          src="/images/shop14.png" 
           alt="Second Row Image 2"
           width={600}
           height={400}
@@ -186,7 +186,7 @@ const AsgaardSofaPage = () => {
           <div className="grid grid-cols-4 gap-4">
             <div className="text-center">
               <Image
-                src="/image/product1.jpeg"
+                src="/images/shop14.png"
                 alt="Product 1"
                 width={150}
                 height={150}
@@ -197,7 +197,7 @@ const AsgaardSofaPage = () => {
             </div>
             <div className="text-center">
               <Image
-                src="/image/product2.jpeg"
+                src="/images/shop14.png"
                 alt="Product 2"
                 width={150}
                 height={150}
@@ -208,7 +208,7 @@ const AsgaardSofaPage = () => {
             </div>
             <div className="text-center">
               <Image
-                src="/image/product3.jpeg"
+                src="/images/shop14.png"
                 alt="Product 3"
                 width={150}
                 height={150}
@@ -219,7 +219,7 @@ const AsgaardSofaPage = () => {
             </div>
             <div className="text-center">
               <Image
-                src="/image/product4.jpeg"
+                src="/images/shop14.png"
                 alt="Product 4"
                 width={150}
                 height={150}

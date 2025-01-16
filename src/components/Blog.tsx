@@ -4,7 +4,7 @@ import Link from "next/link";
 function Blogs() {
   return (
     <>
-        <div className="flex justify-center overflow-hidden">
+        <div className="max-w-[1450px] mx-auto flex justify-center overflow-hidden">
           <div className="text-center bg-[#FAF4F480] h-auto md:h-[750px]">
             <h4 className="text-2xl text-black font-bold pt-14 ">Our Blogs</h4>
             <p className="pt-4 pb-16 text-lg text-black text-opacity-50">

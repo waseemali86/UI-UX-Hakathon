@@ -4,8 +4,7 @@ import Image from 'next/image'
 
 const Account = () => {
   return (
-    <div>
-      {/* First Section with Tailwind Background */}
+    <div className='max-w-[1450px] mx-auto overflow-hidden'>
       <section className="bg-[url('/images/bg.jpg')] h-[400px] overflow-hidden relative bg-cover bg-center">
         <div className="absolute inset-0 flex flex-col items-center justify-center text-black text-center">
         <div className="mb-4">
@@ -58,7 +57,7 @@ const Account = () => {
                   <label htmlFor="rememberMe" className="text-lg">Remember Me</label>
                 </div>
                 {/* Login Button */}
-                <button className="w-10000 py-2 bg-transparent border border-black rounded-md text-black text-lg hover:bg-black hover:text-white transition">
+                <button className="w-10000 py-1 px-8 bg-transparent border border-black rounded-md text-black text-lg hover:bg-black hover:text-white transition">
                   Login
                 </button>
                 {/* Lost Password Link */}
@@ -92,7 +91,7 @@ const Account = () => {
                   </p>
                 </div>
                 {/* Register Button */}
-                <button className="w-100 py-4 bg-transparent border border-black rounded-md text-black text-lg hover:bg-black hover:text-white transition">
+                <button className="w-100 py-1 px-8 bg-transparent border border-black rounded-md text-black text-lg hover:bg-black hover:text-white transition">
                   Register
                 </button>
               </form>

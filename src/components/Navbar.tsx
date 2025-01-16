@@ -30,7 +30,7 @@ export function NavBar() {
   }
 
   return (
-    <nav className="bg-[#FBEBB5] px-6 py-4 overflow-hidden">
+    <nav className="max-w-[1450px] mx-auto bg-[#FBEBB5] px-6 py-4 overflow-hidden">
       <div className="flex items-center justify-between">
         {/* Navigation Links */}
         <div className="hidden md:flex space-x-14 ml-20 items-center justify-center w-full">

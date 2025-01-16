@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-white py-8 border-t border-gray-200 overflow-hidden">
+    <footer className="max-w-[1450px] mx-auto bg-white py-8 border-t border-gray-200 overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Address Section */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-20">
@@ -67,9 +67,9 @@ const Footer = () => {
         <div className="mt-8 text-center text-gray-600 text-sm">
           <p>
             2024 &copy; 
-            <a href="https://github.com/waseemali" className="hover:underline" target="_blank" rel="noopener noreferrer"> waseem86</a> 
+            <a href="https://github.com/waseemali" className="hover:underline" target="_blank" rel="noopener noreferrer"> waseem</a> 
             @ 
-            <a href="https://www.linkedin.com/in/waseemali" className="hover:underline" target="_blank" rel="noopener noreferrer"> www.linkedin.com/in/waseem86</a>. 
+            <a href="https://www.linkedin.com/in/waseemali" className="hover:underline" target="_blank" rel="noopener noreferrer"> www.linkedin.com/in/waseem</a>. 
             All rights reserved.
           </p>
         </div>

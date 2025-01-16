@@ -4,7 +4,7 @@ import React from 'react';
 const Top4 = () => {
   return (
     <>
-    <div className='flex flex-col justify-center items-center md:items-start md:flex-row md:justify-evenly bg-[#FFF9E5] h-auto md:h-[639px] py-10 overflow-hidden'>
+    <div className='max-w-[1450px] mx-auto flex flex-col justify-center items-center md:items-start md:flex-row md:justify-evenly bg-[#FFF9E5] h-auto md:h-[639px] py-10 overflow-hidden'>
         <div className=''>
             <Image
              src="/images/top7.png"
@@ -23,9 +23,10 @@ const Top4 = () => {
             className='text-black text-3xl font-bold pb-7'
             >
                 Asgaard Sofa
+
             </h4>
             <a
-            href="#"
+            href="/shop/asgaardsofa"
             className="text-black font-medium mt-5 hover:text-gray-800 transition border border-black px-8 py-2"
           >
             Order Now
