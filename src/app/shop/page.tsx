@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import Product from '@/components/shop';
+import ProductShop from '@/components/shop';
 
 const Shop = () => {
   return (
@@ -24,6 +26,7 @@ const Shop = () => {
           </p>
         </div>
       </section>
+      <ProductShop />
 
      {/* Second Section: Product Grid */}
 <section className="bg-white text-black py-10">
