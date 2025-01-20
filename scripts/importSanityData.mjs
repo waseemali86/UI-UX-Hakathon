@@ -61,15 +61,6 @@ async function importData() {
         _type: 'product',
         id: product.id.toString(),
         name: product.name,
-        imagePath: product.image
-          ? {
-              _type: 'image',
-              asset: {
-                _type: 'reference',
-                _ref: imageRef,
-              },
-            }
-          : undefined,
         price: product.price,
         description: product.description,
         discountPercentage: 0, // Set default discount

@@ -1,3 +1,5 @@
+// import { Rule } from "sanity";
+
 export const product = {
   name: 'product',
   title: 'Product',
@@ -14,9 +16,10 @@ export const product = {
       type: 'string',
     },
     {
-      name: 'imagePath',
-      title: 'Image Path',
-      type: 'url',
+      name: 'image',
+      title: 'Image ',
+      type: 'image',
+      // validation: (Rule: Rule) => Rule.uri({ scheme: ['http', 'https'] }),
     },
     {
       name: 'price',
