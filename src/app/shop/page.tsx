@@ -1,7 +1,6 @@
 "use client";
 
-"use client";
-
+import { useCart } from "@/context/cartContext";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
@@ -23,6 +22,8 @@ const ProductShop = () => {
   const [products, setProducts] = useState<Product[]>([]); // State for products
   const [searchQuery, setSearchQuery] = useState(""); // State for search query
   const [loading, setLoading] = useState(true); // State for loading
+  const { addToCart } = useCart(); // Access addToCart function
+
 
   // Fetch products from Sanity
   useEffect(() => {
@@ -66,6 +67,7 @@ const ProductShop = () => {
     product.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  
   return (
     <div className="max-w-[1450px] mx-auto overflow-hidden bg-[#faf4f4]">
       {/* Header Section */}
@@ -115,7 +117,7 @@ const ProductShop = () => {
 
       {/* Product List */}
       {loading ? (
-        <p className="text-center text-lg font-semibold text-gray-700">
+        <p className="flex justify-center items-center h-screen text-center text-lg font-semibold text-gray-700">
           Loading products...
         </p>
       ) : (
@@ -166,10 +168,14 @@ const ProductShop = () => {
                       {product.isFeaturedProduct ? "Yes" : "No"}
                     </p>
                   </div>
-                  <div className="mt-1 flex justify-center">
-                    <button className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300">
+                  <div className="mt-1">
+                    <Link href="/cart">
+                    <button
+                    onClick={() => addToCart(product)}
+                    className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300">
                       Add to Cart
                     </button>
+                    </Link>
                   </div>
                   </div>
                 </section>

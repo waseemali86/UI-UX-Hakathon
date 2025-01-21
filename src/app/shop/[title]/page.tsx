@@ -13,25 +13,34 @@ interface Product {
   image: string;
 }
 
-export default async function ProductPage({params}: { params: Promise<{ title: string }> }) {
-  // Destructure the title from params
-  const { title } = await params;
+interface ProductPageProps {
+  params: {
+    title: string;
+  };
+}
 
-  // Fetch the blog post based on the title
+export default async function ProductPage({ params }: ProductPageProps) {
+  // Destructure the title from params
+  const { title } = params;
+
+  // Fetch the product based on the title
   const product: Product = await client.fetch(
-    `*[_type == 'product' && _id == $zord]{
-  _id,
-  name,
-  description,
-  price,
-  category,
-  stockLevel,
-  isFeaturedProduct,
-  image
-  }[0]`,
+    `*[_type == 'product' && _id == $zord][0]{
+      _id,
+      name,
+      description,
+      price,
+      category,
+      stockLevel,
+      isFeaturedProduct,
+      image
+    }`,
     { zord: title }
   );
-  console.log(product);
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
