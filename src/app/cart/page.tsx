@@ -1,105 +1,105 @@
-"use client";
+// "use client";
 
-import { useCart } from "@/context/cartContext";
-import Image from "next/image";
-import { urlFor } from "@/sanity/lib/image";
-import Link from "next/link";
+// import { useCart } from "@/context/cartContext";
+// import Image from "next/image";
+// import { urlFor } from "@/sanity/lib/image";
+// import Link from "next/link";
 
-const CartPage = () => {
-  const { cart, removeFromCart, incrementQuantity, decrementQuantity } = useCart();
+// const CartPage = () => {
+//   const { cart, removeFromCart, incrementQuantity, decrementQuantity } = useCart();
 
-  return (
-    <div className="max-w-7xl mx-auto p-4">
-         {/* First Section with Tailwind Background */}
-      <section className="bg-[url('/images/bg.jpg')] md:h-[400px] overflow-hidden relative h-[60vh] bg-cover bg-center bg-shop-bg">
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-black text-center">
-          {/* Small Image in Center */}
-          <div className="mb-4">
-             <Image
-              src="/images/shop0.png"
-              alt="Shop Icon"
-              width={100}
-              height={100}
-              className="object-cover rounded-full"
-            />
-          </div>
-          <h1 className="text-5xl font-bold">Cart</h1>
-          <p className="text-xl mt-4">
-            <Link href="/">Home</Link> &gt; Cart
-          </p>
-        </div>
-      </section>
-      <h1 className="text-3xl font-bold mb-6 text-center">Your Cart</h1>
+//   return (
+//     <div className="max-w-7xl mx-auto p-4">
+//          {/* First Section with Tailwind Background */}
+//       <section className="bg-[url('/images/bg.jpg')] md:h-[400px] overflow-hidden relative h-[60vh] bg-cover bg-center bg-shop-bg">
+//         <div className="absolute inset-0 flex flex-col items-center justify-center text-black text-center">
+//           {/* Small Image in Center */}
+//           <div className="mb-4">
+//              <Image
+//               src="/images/shop0.png"
+//               alt="Shop Icon"
+//               width={100}
+//               height={100}
+//               className="object-cover rounded-full"
+//             />
+//           </div>
+//           <h1 className="text-5xl font-bold">Cart</h1>
+//           <p className="text-xl mt-4">
+//             <Link href="/">Home</Link> &gt; Cart
+//           </p>
+//         </div>
+//       </section>
+//       <h1 className="text-3xl font-bold mb-6 text-center">Your Cart</h1>
 
-      {cart.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cart.map((item) => (
-            <div
-              key={item.product._id}
-              className="border rounded-lg shadow-md p-4 flex flex-col items-center bg-white"
-            >
-              {/* Product Image */}
-              <div className="w-full h-40 flex justify-center items-center mb-4">
-                <Image
-                  src={urlFor(item.product.image).url()}
-                  alt={item.product.name}
-                  width={250}
-                  height={250}
-                  className="object-cover rounded-lg transition-transform duration-300 hover:scale-105"
-                />
-              </div>
+//       {cart.length > 0 ? (
+//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+//           {cart.map((item) => (
+//             <div
+//               key={item.product._id}
+//               className="border rounded-lg shadow-md p-4 flex flex-col items-center bg-white"
+//             >
+//               {/* Product Image */}
+//               <div className="w-full h-40 flex justify-center items-center mb-4">
+//                 <Image
+//                   src={urlFor(item.product.image).url()}
+//                   alt={item.product.name}
+//                   width={250}
+//                   height={250}
+//                   className="object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+//                 />
+//               </div>
 
-              {/* Product Info */}
-              <h2 className="text-lg font-semibold mb-2 text-gray-800">
-                {item.product.name}
-              </h2>
-              <p className="text-gray-500 mb-1">
-                <span className="font-semibold">Price:</span> ${item.product.price}
-              </p>
-              <p className="text-gray-500 mb-1">
-                <span className="font-semibold">Quantity:</span> {item.quantity}
-              </p>
-              <p className="text-gray-800 font-semibold mb-4">
-                <span className="text-blue-600">Total:</span> $
-                {item.quantity * item.product.price}
-              </p>
+//               {/* Product Info */}
+//               <h2 className="text-lg font-semibold mb-2 text-gray-800">
+//                 {item.product.name}
+//               </h2>
+//               <p className="text-gray-500 mb-1">
+//                 <span className="font-semibold">Price:</span> ${item.product.price}
+//               </p>
+//               <p className="text-gray-500 mb-1">
+//                 <span className="font-semibold">Quantity:</span> {item.quantity}
+//               </p>
+//               <p className="text-gray-800 font-semibold mb-4">
+//                 <span className="text-blue-600">Total:</span> $
+//                 {item.quantity * item.product.price}
+//               </p>
 
-              {/* Quantity Buttons */}
-              <div className="flex items-center gap-4 mb-4">
-                <button
-                  onClick={() => decrementQuantity(item.product._id)}
-                  className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition"
-                >
-                  -
-                </button>
-                <button
-                  onClick={() => incrementQuantity(item.product._id)}
-                  className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition"
-                >
-                  +
-                </button>
-              </div>
+//               {/* Quantity Buttons */}
+//               <div className="flex items-center gap-4 mb-4">
+//                 <button
+//                   onClick={() => decrementQuantity(item.product._id)}
+//                   className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition"
+//                 >
+//                   -
+//                 </button>
+//                 <button
+//                   onClick={() => incrementQuantity(item.product._id)}
+//                   className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition"
+//                 >
+//                   +
+//                 </button>
+//               </div>
 
-              {/* Remove Button */}
-              <button
-                onClick={() => removeFromCart(item.product._id)}
-                className="w-full px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
-              >
-                Remove
-              </button>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <p className="text-center text-gray-500 text-lg mt-12">
-          Your cart is empty.
-        </p>
-      )}
-    </div>
-  );
-};
+//               {/* Remove Button */}
+//               <button
+//                 onClick={() => removeFromCart(item.product._id)}
+//                 className="w-full px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+//               >
+//                 Remove
+//               </button>
+//             </div>
+//           ))}
+//         </div>
+//       ) : (
+//         <p className="text-center text-gray-500 text-lg mt-12">
+//           Your cart is empty.
+//         </p>
+//       )}
+//     </div>
+//   );
+// };
 
-export default CartPage;
+// export default CartPage;
 
 // import React from 'react';
 // import Image from 'next/image';
