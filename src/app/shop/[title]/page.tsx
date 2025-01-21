@@ -13,11 +13,7 @@ interface Product {
   image: string;
 }
 
-export default async function ProductPage({
-  params,
-}: {
-  params: Promise<{ title: string }>;
-}) {
+export default async function ProductPage({params}: { params: Promise<{ title: string }> }) {
   // Destructure the title from params
   const { title } = await params;
 

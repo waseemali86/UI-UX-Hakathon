@@ -1,7 +1,12 @@
+"use client";
+
+"use client";
+
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 interface Product {
   _id: string;
@@ -14,22 +19,58 @@ interface Product {
   image: string;
 }
 
-async function ProductShop() {
-  const products: Product[] = await client.fetch(`*[_type == 'product']{
-    _id,
-  name,
-  description,
-  price,
-  category,
-  stockLevel,
-  isFeaturedProduct,
-  image
-  }`);
+const ProductShop = () => {
+  const [products, setProducts] = useState<Product[]>([]); // State for products
+  const [searchQuery, setSearchQuery] = useState(""); // State for search query
+  const [loading, setLoading] = useState(true); // State for loading
+
+  // Fetch products from Sanity
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const data: Product[] = await client.fetch(`*[_type == 'product']{
+          _id,
+          name,
+          description,
+          price,
+          category,
+          stockLevel,
+          isFeaturedProduct,
+          image
+        }`);
+        setProducts(data);
+        setLoading(false); // Stop loading once data is fetched
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  // Generate suggestions based on search query
+  const suggestions = products
+    .filter((product) =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    .map((product) => product.name);
+
+  // Handle suggestion click
+  const handleSuggestionClick = (suggestion: string) => {
+    setSearchQuery(suggestion);
+  };
+
+  // Filter products based on search query
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
-    <div className="max-w-[1450px] mx-auto overflow-hidden">
+    <div className="max-w-[1450px] mx-auto overflow-hidden bg-[#faf4f4]">
+      {/* Header Section */}
       <section className="bg-[url('/images/bg.jpg')] md:h-[400px] overflow-hidden relative h-[60vh] bg-cover bg-center bg-shop-bg">
         <div className="absolute inset-0 flex flex-col items-center justify-center text-black text-center">
-          {/* Small Image in Center */}
           <div className="mb-4">
             <Image
               src="/images/shop0.png"
@@ -46,36 +87,70 @@ async function ProductShop() {
         </div>
       </section>
 
-      <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
-        {products.map((product) => (
-          <div
-            key={product._id}
-            className="flex flex-col items-center bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300"
-          >
-            <section className="flex flex-col items-center p-4">
-              <Link href={`/shop/${product._id}`} className="w-full">
-                <div className="w-full h-40 flex justify-center items-center">
-                  <Image
-                    src={urlFor(product.image).url()}
-                    alt={product.name}
-                    width={250}
-                    height={250}
-                    className="object-cover rounded-lg transition-transform duration-300 hover:scale-105"
-                  />
-                </div>
-              </Link>
-              <div className=" mt-4">
-                <h2 className="text-xl font-semibold text-gray-800">
-                  {product.name}
-                </h2>
-                <p className="text-sm text-gray-500 mt-2">
-                  {product.description}
-                </p>
-                <div className="mt-2">
-                  <p className="text-lg font-bold text-gray-800">
-                    ${product.price}
-                  </p>
-                  <div className="flex justify-between items-center mt-2">
+      {/* Search Bar with Suggestions */}
+      <div className="relative flex justify-center mt-6 mb-4">
+        <div className="w-full max-w-lg">
+          <input
+            type="text"
+            placeholder="Search products..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          {searchQuery && suggestions.length > 0 && (
+            <ul className="absolute bg-white shadow-lg border border-gray-200 mt-2 rounded-lg w-full max-w-lg z-10">
+              {suggestions.map((suggestion, index) => (
+                <li
+                  key={index}
+                  className="px-4 py-2 cursor-pointer hover:bg-gray-100"
+                  onClick={() => handleSuggestionClick(suggestion)}
+                >
+                  {suggestion}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+
+      {/* Product List */}
+      {loading ? (
+        <p className="text-center text-lg font-semibold text-gray-700">
+          Loading products...
+        </p>
+      ) : (
+        <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product) => (
+              <div
+                key={product._id}
+                className="flex flex-col items-center bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+              >
+                <section className="flex flex-col items-center p-4">
+                  <Link href={`/shop/${product._id}`} className="w-full">
+                    <div className="w-full h-40 flex justify-center items-center">
+                      <Image
+                        src={urlFor(product.image).url()}
+                        alt={product.name}
+                        width={250}
+                        height={250}
+                        className="object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+                      />
+                    </div>
+                  </Link>
+                  <div className="mt-4">
+                    <h2 className="text-xl font-semibold text-gray-800">
+                      {product.name}
+                    </h2>
+                    <p className="text-sm text-gray-500 mt-2">
+                      {product.description}
+                    </p>
+                    <div className="mt-2">
+                      <p className="text-lg font-bold text-gray-800">
+                        ${product.price}
+                      </p>
+                    </div>
+                      <div className="flex justify-between items-center mt-2">
                     <p className="text-sm text-gray-600 ">Category</p>
                     <p className="text-sm text-gray-600 ">{product.category}</p>
                   </div>
@@ -96,15 +171,20 @@ async function ProductShop() {
                       Add to Cart
                     </button>
                   </div>
-                </div>
+                  </div>
+                </section>
               </div>
-            </section>
-          </div>
-        ))}
-      </section>
+            ))
+          ) : (
+            <p className="text-center col-span-full text-gray-500">
+              No products found.
+            </p>
+          )}
+        </section>
+      )}
     </div>
   );
-}
+};
 
 export default ProductShop;
 
