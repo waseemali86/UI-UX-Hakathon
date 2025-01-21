@@ -121,7 +121,7 @@ const ProductShop = () => {
           Loading products...
         </p>
       ) : (
-        <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+        <section className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
               <div
