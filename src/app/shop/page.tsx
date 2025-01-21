@@ -130,7 +130,7 @@ const ProductShop = () => {
               >
                 <section className="flex flex-col items-center p-4">
                   <Link href={`/shop/${product._id}`} className="w-full">
-                    <div className="w-full h-40 flex justify-center items-center">
+                    <div className="bg-[#faf4f4] w-full h-40 flex justify-center items-center">
                       <Image
                         src={urlFor(product.image).url()}
                         alt={product.name}
