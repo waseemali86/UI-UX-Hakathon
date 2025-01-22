@@ -6,6 +6,7 @@ import { useCart } from "@/context/cartContext";
 import { client } from "@/sanity/lib/client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
 interface Product {
   _id: string;
@@ -18,14 +19,9 @@ interface Product {
   image: string;
 }
 
-interface ProductPageProps {
-  params: {
-    title: string;
-  };
-}
 
 export default function ProductDetails( ) {
-  const title = ""
+  const { title } = useParams();
   const [product, setProduct] = useState<Product | null>(null); // State for a single product
   const { addToCart } = useCart();
 
