@@ -9,7 +9,7 @@ const CartPage = () => {
   const { cart, removeFromCart, incrementQuantity, decrementQuantity } = useCart();
 
   return (
-    <div className="max-w-[1450px] mx-auto">
+    <div className="max-w-[1450px] mx-auto overflow-hidden">
          {/* First Section with Tailwind Background */}
       <section className="bg-[url('/images/bg.jpg')] md:h-[400px] overflow-hidden relative h-[60vh] bg-cover bg-center bg-shop-bg">
         <div className="absolute inset-0 flex flex-col items-center justify-center text-black text-center">
@@ -29,10 +29,10 @@ const CartPage = () => {
           </p>
         </div>
       </section>
-      <h1 className="text-3xl font-bold mb-6 text-center">Your Cart</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center mt-4">Your Cart</h1>
 
       {cart.length > 0 ? (
-  <div className="flex flex-wrap gap-6 p-4 justify-start">
+  <div className="flex flex-wrap gap-6 p-4 justify-center sm:justify-start mb-4">
     {cart.map((item) => (
       <div
         key={item.product._id}

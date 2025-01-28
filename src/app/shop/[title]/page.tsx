@@ -76,7 +76,7 @@ export default function ProductDetails( ) {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10">
+    <div className="max-w-[1450px] mx-auto overflow-hidden px-4 py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex justify-center items-center">
           <Image

@@ -81,7 +81,7 @@ const CheckoutPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="max-w-[1450px] mx-auto overflow-hidden bg-gray-50 flex flex-col">
       {/* First Section with Tailwind Background */}
       <section className="bg-[url('/images/bg.jpg')] md:h-[400px] overflow-hidden relative h-[60vh] bg-cover bg-center bg-shop-bg">
         <div className="absolute inset-0 flex flex-col items-center justify-center text-black text-center">

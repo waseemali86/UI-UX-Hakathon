@@ -55,7 +55,7 @@ const WishlistPage = () => {
   };
 
   return (
-    <div>
+    <div className="max-w-[1450px] mx-auto overflow-hidden">
         {/* First Section with Tailwind Background */}
       <section className="bg-[url('/images/bg.jpg')] md:h-[400px] overflow-hidden relative h-[60vh] bg-cover bg-center bg-shop-bg">
         <div className="absolute inset-0 flex flex-col items-center justify-center text-black text-center">
@@ -76,12 +76,12 @@ const WishlistPage = () => {
         </div>
       </section>
 
-      <h1 className="text-3xl font-bold text-center mt-12">Your Wishlist</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4 mt-8">
+      <h1 className="text-3xl font-bold text-center mt-12 ">Your Wishlist</h1>
+      <div className="flex flex-wrap gap-6 p-4 justify-center sm:justify-start my-6">
         {wishlist.length > 0 ? (
           wishlist.map((product) => (
             <div key={product._id}
-             className="border rounded-lg shadow-md p-4 flex flex-col items-center bg-white w-80"
+             className="border rounded-lg shadow-md p-4 flex flex-col justify-center items-center bg-white w-80"
              >
             <div className="w-full h-40 flex justify-center items-center mb-4">
               <Image
