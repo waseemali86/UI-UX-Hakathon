@@ -81,19 +81,21 @@ const CartPage = () => {
         </div>
 
         {/* Remove Button */}
+        <div className="flex gap-2">
         <button
           onClick={() => removeFromCart(item.product._id)}
-          className="w-full px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+          className="w-full px-10 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
         >
           Remove
         </button>
         
           <Link href="/checkout">
           <button
-             className="w-full px-4 py-2 mt-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition">
-            Checkout
+          className="w-full px-10 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition">
+          Checkout
             </button>  
           </Link>
+          </div>
       </div>
     ))}
   </div>

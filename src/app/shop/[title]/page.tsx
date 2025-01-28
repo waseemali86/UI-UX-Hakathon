@@ -7,6 +7,7 @@ import { client } from "@/sanity/lib/client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import toast from "react-hot-toast";
 
 interface Product {
   _id: string;
@@ -51,6 +52,25 @@ export default function ProductDetails( ) {
   }, [title]);
 
 
+  const handleAddToWishlist = (product:Product) => {
+    // Get existing wishlist from localStorage
+    const existingWishlist = localStorage.getItem("wishlist");
+    const wishlist = existingWishlist ? JSON.parse(existingWishlist) : [];
+  
+    // Check if the product already exists in the wishlist
+    const isProductInWishlist = wishlist.some((item:Product) => item._id === product._id);
+    if (isProductInWishlist) {
+      toast.error("This product is already in your wishlist!");
+      return;
+    }
+  
+    // Add product to the wishlist
+    wishlist.push(product);
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  
+    // Notify the user
+    toast.success(`${product.name} has been added to your wishlist!`);
+  };
   if (!product) {
     return <p>Loading...</p>;
   }
@@ -89,13 +109,21 @@ export default function ProductDetails( ) {
             <p className="text-sm text-gray-500">Stock: {product.stockLevel}</p>
           </div>
 
-          <div className="w-full mt-6 flex justify-center">
+          <div className="w-full mt-6 flex justify-between">
             <Link href ="/cart">
             <button
               onClick={() => addToCart(product)}
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300"
+              className="bg-blue-600 text-white px-12 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300"
             >
               Add to Cart
+            </button>
+            </Link>
+            <Link href ="/wishlist">
+            <button
+              onClick={() => handleAddToWishlist(product)}
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300"
+            >
+              Add to Favorite
             </button>
             </Link>
           </div>
