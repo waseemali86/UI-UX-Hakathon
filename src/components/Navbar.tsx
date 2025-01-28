@@ -93,7 +93,7 @@ export function NavIcons() {
         <span className="sr-only">Search</span>
       </button>
       <button className="p-2">
-        <Heart className="h-5 w-5" />
+        <Link href="/wishlist"><Heart className="h-5 w-5" /></Link>
         <span className="sr-only">Wishlist</span>
       </button>
       <button className="p-2">

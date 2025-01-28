@@ -6,20 +6,12 @@ import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { Products } from "../types/types";
 
-interface Product {
-  _id: string;
-  name: string;
-  description: string;
-  price: number;
-  category: string;
-  stockLevel: number;
-  isFeaturedProduct: boolean;
-  image: string;
-}
+
 
 const ProductShop = () => {
-  const [products, setProducts] = useState<Product[]>([]); // State for products
+  const [products, setProducts] = useState<Products[]>([]); // State for products
   const [searchQuery, setSearchQuery] = useState(""); // State for search query
   const [loading, setLoading] = useState(true); // State for loading
   const { addToCart } = useCart(); // Access addToCart function
@@ -29,7 +21,7 @@ const ProductShop = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const data: Product[] = await client.fetch(`*[_type == 'product']{
+        const data: Products[] = await client.fetch(`*[_type == 'product']{
           _id,
           name,
           description,
@@ -136,7 +128,7 @@ const ProductShop = () => {
                         alt={product.name}
                         width={250}
                         height={250}
-                        className="object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+                        className="w-full h-40 object-cover rounded-lg transition-transform duration-300 hover:scale-105"
                       />
                     </div>
                   </Link>

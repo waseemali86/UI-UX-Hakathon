@@ -32,69 +32,78 @@ const CartPage = () => {
       <h1 className="text-3xl font-bold mb-6 text-center">Your Cart</h1>
 
       {cart.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-          {cart.map((item) => (
-            <div
-              key={item.product._id}
-              className="border rounded-lg shadow-md p-4 flex flex-col items-center bg-white"
-            >
-              {/* Product Image */}
-              <div className="w-full h-40 flex justify-center items-center mb-4">
-                <Image
-                  src={urlFor(item.product.image).url()}
-                  alt={item.product.name}
-                  width={250}
-                  height={250}
-                  className="object-cover rounded-lg transition-transform duration-300 hover:scale-105"
-                />
-              </div>
-
-              {/* Product Info */}
-              <h2 className="text-lg font-semibold mb-2 text-gray-800">
-                {item.product.name}
-              </h2>
-              <p className="text-gray-500 mb-1">
-                <span className="font-semibold">Price:</span> ${item.product.price}
-              </p>
-              <p className="text-gray-500 mb-1">
-                <span className="font-semibold">Quantity:</span> {item.quantity}
-              </p>
-              <p className="text-gray-800 font-semibold mb-4">
-                <span className="text-blue-600">Total:</span> $
-                {item.quantity * item.product.price}
-              </p>
-
-              {/* Quantity Buttons */}
-              <div className="flex items-center gap-4 mb-4">
-                <button
-                  onClick={() => decrementQuantity(item.product._id)}
-                  className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition"
-                >
-                  -
-                </button>
-                <button
-                  onClick={() => incrementQuantity(item.product._id)}
-                  className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition"
-                >
-                  +
-                </button>
-              </div>
-
-              {/* Remove Button */}
-              <button
-                onClick={() => removeFromCart(item.product._id)}
-                className="w-full px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
-              >
-                Remove
-              </button>
-            </div>
-          ))}
+  <div className="flex flex-wrap gap-6 p-4 justify-start">
+    {cart.map((item) => (
+      <div
+        key={item.product._id}
+        className="border rounded-lg shadow-md p-4 flex flex-col items-center bg-white w-80"
+      >
+        {/* Product Image */}
+        <div className="w-full h-40 flex justify-center items-center mb-4">
+          <Image
+            src={urlFor(item.product.image).url()}
+            alt={item.product.name}
+            width={250}
+            height={250}
+            className="w-full h-40 object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+          />
         </div>
-      ) : (
-        <p className="text-center text-gray-500 text-lg mt-12">
-          Your cart is empty.
+
+        {/* Product Info */}
+        <h2 className="text-lg font-semibold mb-2 text-gray-800">
+          {item.product.name}
+        </h2>
+        <p className="text-gray-500 mb-1">
+          <span className="font-semibold">Price:</span> ${item.product.price}
         </p>
-      )}
+        <p className="text-gray-500 mb-1">
+          <span className="font-semibold">Quantity:</span> {item.quantity}
+        </p>
+        <p className="text-gray-800 font-semibold mb-4">
+          <span className="text-blue-600">Total:</span> $
+          {item.quantity * item.product.price}
+        </p>
+
+        {/* Quantity Buttons */}
+        <div className="flex items-center gap-4 mb-4">
+          <button
+            onClick={() => decrementQuantity(item.product._id)}
+            className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition"
+          >
+            -
+          </button>
+          <button
+            onClick={() => incrementQuantity(item.product._id)}
+            className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition"
+          >
+            +
+          </button>
+        </div>
+
+        {/* Remove Button */}
+        <button
+          onClick={() => removeFromCart(item.product._id)}
+          className="w-full px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+        >
+          Remove
+        </button>
+        
+          <Link href="/checkout">
+          <button
+             className="w-full px-4 py-2 mt-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition">
+            Checkout
+            </button>  
+          </Link>
+      </div>
+    ))}
+  </div>
+) : (
+  <p className="text-center text-gray-500 text-lg mt-12">
+    Your cart is empty.
+  </p>
+)}
+
+
     </div>
   );
 };
@@ -236,3 +245,4 @@ export default CartPage;
 // }
 
 // export default Cart;
+ 

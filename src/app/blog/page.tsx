@@ -1,7 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Products } from "../types/types";
+import { client } from "@/sanity/lib/client";
 
-function Blog() {
+async function Blog() {
+  const data: Products[] = await client.fetch(
+      `*[_type == 'blog']{
+        _id,
+        name,
+        description,
+        price,
+        category,
+        stockLevel,
+        isFeaturedProduct,
+        image
+      }`
+    );
+
   return (
     <div className="max-w-[1450px] mx-auto overflow-hidden">
       {/* First Section with Tailwind Background */}
@@ -27,66 +42,27 @@ function Blog() {
             {/* 2nd Section: Blog Content with Two Columns (65:35 Ratio) */}
             <section className="bg-white py-10">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-            {/* First Column (65% width) */}
-            <div className="md:col-span-3 space-y-6">
-              {/* First Post */}
-              <div>
+         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+         <div className="md:col-span-3 space-y-6">
+          {data.map((blog) => (
+            <div key={blog._id}>
                 <Image
-                  src="/images/blog2.png"
-                  alt="Going On"
+                  src={blog.image}
+                  alt={blog.name}
                   width={300}
                   height={300}
                   className="w-full  object-cover"
                 />
-                <h1 className="text-3xl font-bold mt-4">Going all-in with millenial design</h1>
+                <h1 className="text-3xl font-bold mt-4">{blog.name}</h1>
                 <p className="text-gray-600 mt-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur enim vel urna aliquam, id euismod eros
-                  pellentesque. Cras volutpat turpis ac nisl iaculis, non faucibus erat volutpat. Aliquam erat volutpat.
+                  {blog.description}
                 </p>
                 <Link href="/" className="text-red-500 hover:underline mt-4 block">
                   Read More
                 </Link>
               </div>
-
-              {/* Second Post */}
-              <div className="mt-12">
-                <Image
-                  src="/images/blog1.png"
-                  alt="Going On Again"
-                  width={300}
-                  height={300}
-                  className="w-full object-cover"
-                />
-                <h1 className="text-3xl font-bold mt-4">Exploring New ways of decorating</h1>
-                <p className="text-gray-600 mt-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur enim vel urna aliquam, id euismod eros
-                  pellentesque. Cras volutpat turpis ac nisl iaculis, non faucibus erat volutpat. Aliquam erat volutpat.
-                </p>
-                <Link href="/" className="text-red-500 hover:underline mt-4 block">
-                  Read More
-                </Link>
-              </div>
-
-              {/* Third Post */}
-              <div className="mt-12">
-                <Image
-                  src="/images/blog3.png"
-                  alt="Third Post"
-                  width={300}
-                  height={300}
-                  className="w-full object-cover"
-                />
-                <h1 className="text-3xl font-bold mt-4">Hand made pieces that took time to make</h1>
-                <p className="text-gray-600 mt-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur enim vel urna aliquam, id euismod eros
-                  pellentesque. Cras volutpat turpis ac nisl iaculis, non faucibus erat volutpat. Aliquam erat volutpat.
-                </p>
-                <Link href="/" className="text-red-500 hover:underline mt-4 block">
-                  Read More
-                </Link>
-              </div>
-            </div>
+          ))}
+          </div>
 
             {/* Second Column (35% width) for Recent Posts */}
             <div className="md:col-span-2 space-y-6">
@@ -238,3 +214,5 @@ function Blog() {
 
 
 export default Blog
+
+
